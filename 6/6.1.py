@@ -52,8 +52,6 @@ counts = Counter(cleaned_coordinates)
 print(counts.most_common(1))
 # use pandas for plotting coordinates as categorical values
 df = pd.DataFrame([ str(c[0]) + str(c[1]) for c in coordinates], columns=["coordinates"])
-print(df)
 df.coordinates = df.coordinates.astype("category")
-print(df.coordinates)
 plt.matshow(np.matrix(df.coordinates.cat.codes).reshape((height, width)))
 plt.show()

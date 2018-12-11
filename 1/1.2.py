@@ -1,11 +1,8 @@
-from functools import reduce
-
 input = list(map(int, open("input1.txt", "r").read().splitlines()))
 freqs = {}
 freq = 0
 i = 0
-found = False
-while (not found):
+while (True):
     freq += input[i]
     if  freq not in freqs:
         freqs[freq] = 0

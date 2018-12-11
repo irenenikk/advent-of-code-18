@@ -16,7 +16,6 @@ max_row = reduce(lambda a, b: a if max(a[0], b[0]) == a[0] else b, inputs)[0]
 min_col = reduce(lambda a, b: a if min(a[1], b[1]) == a[1] else b, inputs)[1] 
 max_col = reduce(lambda a, b: a if max(a[1], b[1]) == a[1] else b, inputs)[1]
 
-# coordinate_matrix = np.zeros((max_row - min_row, max_col - min_col))
 distances = []
 coordinates = []
 
