@@ -33,7 +33,6 @@ for gen in range(generations):
     # construct a new state instead of modifying old one
     # use a list for easy modification
     new_state = ['.'] * len(state)
-    # print(''.join(state))
     for i in range(len(state) - info_len):
         plants = state[i:i+info_len]
         plant_string = ''.join(plants)
@@ -51,9 +50,11 @@ for gen in range(generations):
     # see how many pots there are
     state_sum = get_index_sum(state, index_of_zero)
     # check if the pots have just moved to the right (which they seem to do)
+    # not my finest work really    
     pots = state.count('#')
     if state_sum == last_state_sum + pots:
         break
     last_state_sum = get_index_sum(state, index_of_zero)
-# transform indexes back to original scale
+# now we know that a constant is added to the pot sum on each iteration
+# so we can infer the final outcome
 print(get_index_sum(state, index_of_zero) + (generations - gen - 1)*pots)
